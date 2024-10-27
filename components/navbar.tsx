@@ -1,68 +1,55 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
+import { LiaCertificateSolid } from "react-icons/lia";
 import { Button } from "@/components/ui/button"
 
 export function Navbar() {
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col">
       <header className="sticky top-0 z-50 w-full bg-background shadow">
-        <div className="container flex h-14 items-center justify-between px-4 md:px-6">
+        <div className="container flex h-14 items-center justify-between  lg:ml-24 px-4 md:px-6">
           <Link href="#" className="flex items-center gap-2" prefetch={false}>
             <Image src="/logo.jpeg" alt="Logo" width={24} height={24} className="h-6 w-6" />
             <span className="text-lg font-semibold">Cultural club</span>
           </Link>
-          <nav className="hidden lg:flex items-center gap-6 text-sm font-medium ml-6">
-            <Link
-              href="/"
-              className="transition-colors hover:text-primary hover:underline hover:underline-offset-4"
-              prefetch={false}
-            >
+          
+          <nav className="hidden lg:flex items-center gap-6 text-sm font-medium ml-24">
+            <Link href="/" className="transition-colors hover:text-primary hover:underline hover:underline-offset-4" prefetch={false}>
               Home
             </Link>
-            <Link
-              href="events"
-              className="transition-colors hover:text-primary hover:underline hover:underline-offset-4"
-              prefetch={false}
-            >
+            <Link href="events" className="transition-colors hover:text-primary hover:underline hover:underline-offset-4" prefetch={false}>
               Events
             </Link>
-            <Link
-              href="about"
-              className="transition-colors hover:text-primary hover:underline hover:underline-offset-4"
-              prefetch={false}
-            >
+            <Link href="about" className="transition-colors hover:text-primary hover:underline hover:underline-offset-4" prefetch={false}>
               About Us
             </Link>
-            <Link
-              href="gallery"
-              className="transition-colors hover:text-primary hover:underline hover:underline-offset-4"
-              prefetch={false}
-            >
+            <Link href="gallery" className="transition-colors hover:text-primary hover:underline hover:underline-offset-4" prefetch={false}>
               Gallery
             </Link>
-            <Link
-              href="team"
-              className="transition-colors hover:text-primary hover:underline hover:underline-offset-4"
-              prefetch={false}
-            >
+            <Link href="team" className="transition-colors hover:text-primary hover:underline hover:underline-offset-4" prefetch={false}>
               Teams
             </Link>
-            <Link
-              href="contact"
-              className="transition-colors hover:text-primary hover:underline hover:underline-offset-4"
-              prefetch={false}
-            >
-              Contact Us
+            
+            <Link href="verify" className="transition-colors hover:text-primary hover:underline hover:underline-offset-4" prefetch={false}>
+              Verify Certificates
             </Link>
-            <Link
-              href="downloads"
-              className="transition-colors hover:text-primary hover:underline hover:underline-offset-4"
-              prefetch={false}
-            >
+            <Link href="downloads" className="transition-colors hover:text-primary hover:underline hover:underline-offset-4" prefetch={false}>
               Downloads
             </Link>
+            <Link href="contact" className="transition-colors hover:text-primary hover:underline hover:underline-offset-4" prefetch={false}>
+              Contact Us
+            </Link>
+
+            
+            {/* Admin Link */}
+            <Button asChild className="ml-72">
+            <Link href="/admin" className="transition-colors hover:text-primary hover:underline hover:underline-offset-4" prefetch={false}>
+              Admin
+            </Link>
+            </Button>
           </nav>
+
           <div className="flex items-center gap-2">
             <Sheet>
               <SheetTrigger asChild>
@@ -73,62 +60,45 @@ export function Navbar() {
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] bg-background p-4">
                 <div className="flex flex-col gap-4">
-                  <Link
-                    href="/"
-                    className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary"
-                    prefetch={false}
-                  >
+                  <Link href="/" className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary" prefetch={false}>
                     <HomeIcon className="h-5 w-5" />
                     Home
                   </Link>
-                  <Link
-                    href="events"
-                    className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary"
-                    prefetch={false}
-                  >
+                  <Link href="events" className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary" prefetch={false}>
                     <CalendarIcon className="h-5 w-5" />
                     Events
                   </Link>
-                  <Link
-                    href="about"
-                    className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary"
-                    prefetch={false}
-                  >
+                  <Link href="about" className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary" prefetch={false}>
                     <InfoIcon className="h-5 w-5" />
                     About Us
                   </Link>
-                  <Link
-                    href="gallery"
-                    className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary"
-                    prefetch={false}
-                  >
+                  <Link href="gallery" className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary" prefetch={false}>
                     <ImageIcon className="h-5 w-5" />
                     Gallery
                   </Link>
-                  <Link
-                    href="team"
-                    className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary"
-                    prefetch={false}
-                  >
+                  <Link href="team" className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary" prefetch={false}>
                     <UsersIcon className="h-5 w-5" />
                     Teams
                   </Link>
-                  <Link
-                    href="contact"
-                    className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary"
-                    prefetch={false}
-                  >
+                  <Link href="contact" className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary" prefetch={false}>
                     <MailIcon className="h-5 w-5" />
                     Contact Us
                   </Link>
-                  <Link
-                    href="downloads"
-                    className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary"
-                    prefetch={false}
-                  >
+                  <Link href="verify" className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary" prefetch={false}>
+                    <LiaCertificateSolid  className="h-5 w-5" />
+                    Verify Certificates
+                  </Link>
+                  <Link href="downloads" className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary" prefetch={false}>
                     <DownloadIcon className="h-5 w-5" />
                     Downloads
                   </Link>
+                  {/* Admin Link in Mobile Menu */}
+                  <Button>
+                  <Link href="/admin" className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary" prefetch={false}>
+                    <UsersIcon className="h-5 w-5" />
+                    Admin
+                  </Link>
+                  </Button>
                 </div>
               </SheetContent>
             </Sheet>
